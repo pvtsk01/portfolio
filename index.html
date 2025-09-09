@@ -1061,7 +1061,7 @@
         // Fetch GitHub user data with proxy
         async function fetchGitHubUserData() {
             try {
-                const response = await fetch(`${GITHUB_API_URL}${encodeURIComponent(`${GITHUB_API_URL}/users/${GITHUB_USERNAME}`)}`);
+                const response = await fetch(`${GITHUB_PROXY_URL}${encodeURIComponent(`${GITHUB_API_URL}/users/${GITHUB_USERNAME}`)}`);
                 if (!response.ok) throw new Error('Failed to fetch user data');
                 return await response.json();
             } catch (error) {
@@ -1073,7 +1073,7 @@
         // Fetch GitHub repositories with proxy
         async function fetchGitHubRepos() {
             try {
-                const response = await fetch(`${GITHUB_API_URL}${encodeURIComponent(`${GITHUB_API_URL}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)}`);
+                const response = await fetch(`${GITHUB_PROXY_URL}${encodeURIComponent(`${GITHUB_API_URL}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)}`);
                 if (!response.ok) throw new Error('Failed to fetch repositories');
                 return await response.json();
             } catch (error) {
